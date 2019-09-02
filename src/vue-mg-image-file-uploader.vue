@@ -7,7 +7,7 @@
         </div>
     </div>
     <div class="d-flex align-content-start flex-wrap mt-2">
-        <div class="image-container mx-2 mb-2" v-for="(upload_file, index) in wk_upload_files" :key="index" v-show="upload_file.image">
+        <div class="image-container mr-2 mb-2" v-for="(upload_file, index) in wk_upload_files" :key="index" v-show="upload_file.image">
             <img
                 class="preview-item-file"
                 :src="upload_file.image"
