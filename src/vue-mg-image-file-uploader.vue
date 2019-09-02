@@ -49,8 +49,11 @@ export default {
         this.wk_upload_files = this.upload_files
     },
     watch: {
-        upload_files: function (val) {
-            this.wk_upload_files = val
+        upload_files: {
+            handler: function (val) {
+                this.wk_upload_files = val
+            },
+            deep: true,
         }
     },
     computed: {
