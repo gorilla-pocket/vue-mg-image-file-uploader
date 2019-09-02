@@ -1,6 +1,7 @@
 <template>
   <section class="container mt-2">
-    <image-file-uploader :upload-files.sync="update_files"/>
+    <image-file-uploader :upload_files.sync="update_files"/>
+    <button class="btn" @click="onClick">テスト</button>
   </section>
 </template>
 
@@ -16,7 +17,11 @@ export default {
     }
   },
   methods: {
-    //
+    onClick: function () {
+      this.update_files.push({
+        id: null,
+      })
+    }
   },
   components: {
     ImageFileUploader,

@@ -49,12 +49,9 @@ export default {
         this.wk_upload_files = this.upload_files
     },
     watch: {
-        upload_files: {
-            handler: function (val) {
-                this.wk_upload_files = val
-            },
-            deep: true,
-        }
+        upload_files: function (val) {
+            this.wk_upload_files = val
+        },
     },
     computed: {
         attr: function () {
@@ -82,7 +79,7 @@ export default {
                     image: e.target.result,
                     file_name: file_name,
                 })
-                this.$emit('update:upload-files', this.wk_upload_files)
+                this.$emit('update:upload_files', this.wk_upload_files)
             };
             reader.readAsDataURL(file)
         },
