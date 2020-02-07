@@ -1,7 +1,11 @@
 <template>
   <section class="container mt-2">
-    <image-file-uploader :upload_files.sync="update_files"/>
-    <button class="btn" @click="onClick">テスト</button>
+    <image-file-uploader :upload_files.sync="update_files">
+    <!-- <button class="btn" @click="onClick">テスト</button> -->
+      <template v-slot:button-display>
+        <i class="fas fa-plus"></i>テスト
+      </template>
+    </image-file-uploader>
   </section>
 </template>
 

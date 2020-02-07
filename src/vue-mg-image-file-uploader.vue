@@ -3,7 +3,11 @@
     <div>
         <input type="file" name="files[]" v-bind="attr" style="display:none" @change="onFileChange" ref="file" :accept="accept"/>
         <div>
-            <button type="button" class="btn btn-primary" @click="$refs.file.click()"><i class="fas fa-plus"></i> ファイル</button>
+            <button type="button" class="btn btn-primary" @click="$refs.file.click()">
+                <slot name="button-display">
+                    <i class="fas fa-plus"></i> ファイル
+                </slot>
+            </button>
         </div>
     </div>
     <div class="d-flex align-content-start flex-wrap mt-2">
@@ -19,7 +23,6 @@
     </div>
 </div>
 </template>
-
 <script>
 export default {
     props: {
@@ -95,7 +98,6 @@ export default {
     },
 }
 </script>
-
 <style scoped>
 .image-container {
     position: relative;
